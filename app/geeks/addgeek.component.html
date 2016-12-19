@@ -1,0 +1,43 @@
+
+<div class="row">
+  
+    
+<form (ngSubmit)="addGeek()" #addform="ngForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" [(ngModel)]="model.Name" name="name" class="form-control" id="name" required #name="ngModel">
+    </div>
+    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+      Geek Name is required
+    </div>
+    <div class="form-group">
+      <label for="exp">Experience</label>
+      <input type="number" [(ngModel)]="model.Exp" name="exp" class="form-control" id="exp" required #exp="ngModel">
+    </div>
+    <div [hidden]="exp.valid || exp.pristine" class="alert alert-danger">
+      Geek Experience is required
+    </div>
+    <div class="form-group">
+      <label for="exp">Age</label>
+      <input type="number" [(ngModel)]="model.Age" name="age" class="form-control" id="age" required #age="ngModel">
+    </div>
+    <div [hidden]="age.valid || age.pristine" class="alert alert-danger">
+      Geek Age is required
+    </div>
+     <div class="form-group">
+      <label for="photo">Photo</label>
+      <input type="text" [(ngModel)]="model.Photo" name="photo" class="form-control" id="photo" required #photo="ngModel">
+    </div>
+    <div [hidden]="photo.valid || photo.pristine" class="alert alert-danger">
+      Geek Photo is required
+    </div>
+    <div class="form-group">
+      <label for="library">Library</label>
+      <select class="form-control" id="library" [(ngModel)]="model.Library" name="library" required>
+    <option *ngFor="let l of libraries" [value]="l">{{l}}</option>
+  </select>
+    </div>
+    <button type="submit" class="btn btn-default form-control" [disabled]="!addform.form.valid">Add Task</button>
+  </form>
+
+</div>

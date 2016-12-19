@@ -1,0 +1,21 @@
+<br/>
+<div class="row">
+
+    <div class="col-md-12">
+
+        <input class="form-control input-lg" type="text" placeholder="Enter name of geek to search" [(ngModel)]='term' />
+    
+    </div>
+</div>
+
+<br/>
+
+<div class="row">
+    <div *ngFor="let g of geeks |filter:term"  class="col-md-3 col-sm-4 col-xs-6 thumb">
+        <a href="#" class="thumbnail">
+             <img [src]="g.Photo" class="img-responsive">
+        </a>
+</div>
+   
+
+</div>
